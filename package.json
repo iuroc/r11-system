@@ -3,7 +3,10 @@
     "version": "1.0.0",
     "description": "软著代理综合服务平台",
     "main": "index.js",
-    "scripts": {},
+    "scripts": {
+        "dev": "tsc -w",
+        "build": "browserify static/js/index.js -o static/dist/bundle.js && uglifyjs static/dist/bundle.js --mangle --enclose -o static/dist/bundle.min.js && cd server && go build && server/server"
+    },
     "keywords": [],
     "author": "",
     "license": "ISC",
